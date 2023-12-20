@@ -27,9 +27,10 @@ public class QuizElement {
     }
 
     public ArrayList<String> getAllOptions() {
-        ArrayList<String> allOptions = new ArrayList<>(getWrongAnswers());
-        allOptions.add(getCorrectAnswer());
+        ArrayList<String> allOptions = new ArrayList<>(wrongAnswers);
+        allOptions.add(correctAnswer);
         Collections.shuffle(allOptions);
+        //System.out.println(allOptions);
         return allOptions;
     }
 
@@ -45,9 +46,9 @@ public class QuizElement {
         return wrongAnswers;
     }
 
-    public int getCorrectIndex() {
-        return getAllOptions().indexOf(getCorrectAnswer());
-    }
+    /*public int getCorrectIndex() {
+        return getAllOptions().indexOf(correctAnswer);
+    }*/
 }
 
 

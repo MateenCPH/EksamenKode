@@ -1,6 +1,7 @@
 package Task1;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -8,7 +9,8 @@ import static java.lang.System.exit;
 import static java.lang.System.in;
 
 public class Quiz {
-    private List<QuizElement> quizElements;
+    private final List<QuizElement> quizElements;
+    private ArrayList<String> options;
 
     public Quiz() {
         this.quizElements = new ArrayList<>();
@@ -20,10 +22,12 @@ public class Quiz {
 
     public void askQuestion(QuizElement quizElement) {
         System.out.println(quizElement.getQuestion());
-        ArrayList<String> options = quizElement.getAllOptions();
+        this.options = new ArrayList<>(quizElement.getAllOptions());
+        //Collections.shuffle(options);
         for (int i = 0; i < options.size(); i++) {
             System.out.println((i + 1) + ": " + options.get(i));
         }
+
     }
 
 
@@ -33,12 +37,14 @@ public class Quiz {
 
         for (QuizElement quizElement : quizElements) {
             askQuestion(quizElement);
-            System.out.print("Please enter an answer: ");
+            System.out.print("Please enter an answer: \n");
+            System.out.println("test shuffled     " + getAllShuffledOptions());
+            System.out.println("test original     " + quizElement.getAllOptions());
             String inputAnswer = scanner.nextLine();
             try {
                 int chosenIndex = Integer.parseInt(inputAnswer);
 
-                if (chosenIndex == quizElement.getCorrectIndex() -1) {
+                if (chosenIndex == getAllShuffledOptions().indexOf(quizElement.getCorrectAnswer() + 1)) {
                     System.out.println("Correct");
                 } else {
                     System.out.println("Wrong. The correct answer was: " + quizElement.getCorrectAnswer());
@@ -71,6 +77,10 @@ public class Quiz {
             System.out.println("Please enter a valid answer!");
             userChoice();
         }
+    }
+
+    public ArrayList<String> getAllShuffledOptions(){
+        return options;
     }
 
 
