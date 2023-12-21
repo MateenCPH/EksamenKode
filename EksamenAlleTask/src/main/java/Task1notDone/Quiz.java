@@ -1,12 +1,8 @@
-package Task1;
+package Task1notDone;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
-
-import static java.lang.System.exit;
-import static java.lang.System.in;
 
 public class Quiz {
     private final List<QuizElement> quizElements;
