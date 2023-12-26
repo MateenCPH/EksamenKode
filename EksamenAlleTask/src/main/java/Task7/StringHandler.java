@@ -5,9 +5,19 @@ import java.util.Arrays;
 
 public class StringHandler {
 
-    public void replaceText(String txt, String[] names){
-        if (txt.contains(Arrays.toString(names))){
-            String denStuderende = txt.replace(names, "den studerende");
+    public String replaceText(String txt, String[] names){
+        for (String s : names) {
+            if (txt.contains(s)) {
+                txt = txt.replace(s, "Den studerende");
+            }
         }
+        return txt;
+    }
+
+    public String replaceGender(String txt, String[]genderWords){
+        if (txt.contains("Han") || txt.contains("Hun")){
+
+        }
+        return txt;
     }
 }
