@@ -1,4 +1,4 @@
-package Task6;
+package Task6doMore;
 
 public class OrderLine {
 

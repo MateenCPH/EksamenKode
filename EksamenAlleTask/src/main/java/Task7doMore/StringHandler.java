@@ -1,7 +1,4 @@
-package Task7;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+package Task7doMore;
 
 public class StringHandler {
 

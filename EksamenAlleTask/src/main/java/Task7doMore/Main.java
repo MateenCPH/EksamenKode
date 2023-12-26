@@ -1,4 +1,4 @@
-package Task7;
+package Task7doMore;
 
 public class Main {
     public static void main(String[] args) {
