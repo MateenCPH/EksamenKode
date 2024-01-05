@@ -1,4 +1,4 @@
-package Task7doMore;
+package Task7;
 
 public class StringHandler {
 
