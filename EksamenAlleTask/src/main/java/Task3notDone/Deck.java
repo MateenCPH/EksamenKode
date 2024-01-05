@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Deck {
-    ArrayList<Card> cards;
+    protected ArrayList<Card> cards;
 
-    public Deck(ArrayList<Card> cards){
-        this.cards = new ArrayList<>();
-        //makeDeck();
+    public Deck(){
+        cards = new ArrayList<>();
+        makeDeck(cards);
         //shuffleDeck();
     }
 
     public void makeDeck(ArrayList<Card> cards){
         String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
         for (String suit : suits){
-            for (int rank = 1; rank <= 14; rank++){
+            for (int rank = 1; rank <= 13; rank++){
                 Card card = new Card(rank, suit);
                 cards.add(card);
             }
@@ -23,17 +23,13 @@ public class Deck {
         System.out.println(cards);
     }
 
-    private void shuffleDeck(){
-        Collections.shuffle(cards);
-        System.out.println(cards);
+    public ArrayList<Card> getCards() {
+        return cards;
     }
 
-    /*public Card drawCard(){
-        if (!cards.isEmpty()){
-            return cards.remove(cards.size() - 1);
-        }else{
-            System.out.println("The deck is empty");
-            return null;
-        }
+    /*private void shuffleDeck(){
+        Collections.shuffle(cards);
+        System.out.println(cards);
     }*/
+
 }

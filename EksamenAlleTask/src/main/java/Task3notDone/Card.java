@@ -24,8 +24,6 @@ public class Card {
                 return "Queen";
             case 13:
                 return "King";
-            case 14:
-                return "Es";
             default:
                 return Integer.toString(rank);
         }

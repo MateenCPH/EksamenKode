@@ -1,4 +1,4 @@
-package Task6doMore;
+package Task6;
 
 public class OrderLine {
 
@@ -18,4 +18,11 @@ public class OrderLine {
         return "Orderline: \n" + " Item name: " + item.getName() + " | Amount: " + amount + " | Total price: " + getTotalPrice();
     }
 
+    public Item getItem() {
+        return item;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
 }

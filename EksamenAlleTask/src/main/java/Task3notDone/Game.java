@@ -1,23 +1,29 @@
 package Task3notDone;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Game {
-    private Deck deck;
-    private ArrayList<Card> cards;
+    protected ArrayList<Card> deck;
 
     public Game() {
-        this.deck = new Deck(cards);
-        this.cards = new ArrayList<>();
-        deck.makeDeck(cards);
+          Deck fullDeck = new Deck();
+          deck = fullDeck.getCards();
+//        this.myDeck = new ArrayList<>();
+//        deck.makeDeck(myDeck);
     }
 
-    public Card drawCard(){
-        if (!cards.isEmpty()){
-            return cards.remove(cards.size() - 1);
+    public int drawCard(){
+        Random random = new Random();
+        if (!deck.isEmpty()){
+            return random.nextInt(deck.size());
         }else{
             System.out.println("The deck is empty");
-            return null;
+            return 0;
         }
+    }
+
+    public void removeCard(Card card){
+        deck.remove(card);
     }
 }
