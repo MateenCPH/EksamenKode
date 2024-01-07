@@ -9,8 +9,6 @@ public class Game {
     public Game() {
           Deck fullDeck = new Deck();
           deck = fullDeck.getCards();
-//        this.myDeck = new ArrayList<>();
-//        deck.makeDeck(myDeck);
     }
 
     public int drawCard(){

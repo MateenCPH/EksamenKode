@@ -9,7 +9,6 @@ public class Deck {
     public Deck(){
         cards = new ArrayList<>();
         makeDeck(cards);
-        //shuffleDeck();
     }
 
     public void makeDeck(ArrayList<Card> cards){
@@ -27,9 +26,5 @@ public class Deck {
         return cards;
     }
 
-    /*private void shuffleDeck(){
-        Collections.shuffle(cards);
-        System.out.println(cards);
-    }*/
 
 }
